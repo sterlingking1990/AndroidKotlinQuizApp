@@ -38,21 +38,25 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestionOneText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="An Island"
+            android:textSize="20dp"
             android:id="@+id/rbOption1"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jetbrains Fav Dog"
+            android:textSize="20dp"
             android:id="@+id/rbOption2"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Passionate group of Devs in Casablanca"
+            android:textSize="20dp"
             android:id="@+id/rbOption3"/>
 
     </RadioGroup>

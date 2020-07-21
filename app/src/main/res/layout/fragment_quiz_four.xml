@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".QuizOneFragment">
+    tools:context=".QuizFourFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/tvQuestionOneLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:text="Question 1"
+        android:text="Question 4"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,7 +25,7 @@
         android:id="@+id/tvQuestionOneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kotlin is best known for?"
+        android:text="According to JetBrains in 2018 Kotlin users reached?"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,19 +45,19 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Null Pointer handling"
+            android:text="1.2M+"
             android:textSize="20dp"
             android:id="@+id/rbOption1"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lambda Flexibility"
+            android:text="1.5M+"
             android:textSize="20dp"
             android:id="@+id/rbOption2"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Interoperability"
+            android:text="5M+"
             android:textSize="20dp"
             android:id="@+id/rbOption3"/>
 
