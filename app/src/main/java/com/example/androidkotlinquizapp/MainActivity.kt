@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 
         val questionTwoInflatedInstance = QuizTwoFragment()
 
+        val questionThreeInflatedInstance = QuizThreeFragment()
+
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flQuiz,questionOneInflatedInstance)
@@ -30,6 +32,13 @@ class MainActivity : AppCompatActivity() {
         btnQuizTwo.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flQuiz,questionTwoInflatedInstance)
+                commit()
+            }
+        }
+
+        btnQuizThree.setOnClickListener{
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.flQuiz,questionThreeInflatedInstance)
                 commit()
             }
         }
