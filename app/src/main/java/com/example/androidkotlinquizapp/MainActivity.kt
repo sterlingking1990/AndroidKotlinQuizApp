@@ -8,26 +8,29 @@ import kotlinx.android.synthetic.main.frame_layout.*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.frame_layout)
 
-        var questionOneInflatedInstance=QuizOneFragment()
+        val questionOneInflatedInstance=QuizOneFragment()
 
-        var questionTwoInflatedInstance = QuizTwoFragment()
+        val questionTwoInflatedInstance = QuizTwoFragment()
 
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flQuiz,questionOneInflatedInstance)
+            commit()
         }
 
         btnQuizOne.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flQuiz,questionOneInflatedInstance)
+                commit()
             }
         }
 
         btnQuizTwo.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flQuiz,questionTwoInflatedInstance)
+                commit()
             }
         }
 
