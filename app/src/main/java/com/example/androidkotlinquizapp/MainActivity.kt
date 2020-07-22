@@ -1,8 +1,10 @@
 package com.example.androidkotlinquizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentFactory
+import kotlinx.android.synthetic.main.fragment_quiz_four.*
 import kotlinx.android.synthetic.main.frame_layout.*
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +51,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flQuiz,questionFourInflatedInstance)
                 commit()
+            }
+        }
+
+        btnGameActivity.setOnClickListener{
+            Intent(this,GameActivity::class.java).also {
+             startActivity(it)
             }
         }
 
