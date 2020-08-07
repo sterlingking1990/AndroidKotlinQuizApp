@@ -29,28 +29,33 @@
    <Button
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:id="@+id/btn_1"
-       android:text="A"/>
+       android:id="@+id/btn_0"
+       android:onClick="btnCheckClicked"
+       android:text=""/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_1"
+        android:onClick="btnCheckClicked"
+        android:text=""/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_2"
-        android:text="B"/>
+        android:onClick="btnCheckClicked"
+        android:text=""/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_3"
-        android:text="C"/>
+        android:onClick="btnCheckClicked"
+        android:text=""/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_4"
-        android:text="D"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_5"
-        android:text="E"/>
+        android:onClick="btnCheckClicked"
+        android:text=""/>
 </LinearLayout>
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/layout_1"
@@ -62,28 +67,33 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_6"
-        android:text="F"/>
+        android:id="@+id/btn_5"
+        android:onClick="btnCheckClicked"
+        android:text=""/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_6"
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_7"
-            android:text="G"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_8"
-            android:text="H"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_9"
-            android:text="I"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_10"
-            android:text="J"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
     </LinearLayout>
 
     <LinearLayout
@@ -96,28 +106,33 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_10"
+            android:onClick="btnCheckClicked"
+            android:text=""/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_11"
-            android:text="k"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_12"
-            android:text="L"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_13"
-            android:text="M"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_14"
-            android:text="N"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_15"
-            android:text="O"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
     </LinearLayout>
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/layout_3"
@@ -129,28 +144,33 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_15"
+            android:onClick="btnCheckClicked"
+            android:text=""/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_16"
-            android:text="P"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_17"
-            android:text="Q"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_18"
-            android:text="R"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_19"
-            android:text="S"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_20"
-            android:text="T"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
     </LinearLayout>
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/layout_4"
@@ -162,28 +182,33 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_20"
+            android:onClick="btnCheckClicked"
+            android:text=""/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_21"
-            android:text="U"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_22"
-            android:text="V"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_23"
-            android:text="W"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_24"
-            android:text="X"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_25"
-            android:text="Y"/>
+            android:onClick="btnCheckClicked"
+            android:text=""/>
     </LinearLayout>
 
     <Button
