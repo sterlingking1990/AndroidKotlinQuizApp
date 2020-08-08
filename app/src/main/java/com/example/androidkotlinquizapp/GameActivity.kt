@@ -20,6 +20,9 @@ lateinit var userChoosenLetter:String
 lateinit var newAlpha:List<String>
 var number_of_times_clicked=0;
 var number_of_times_correct=0;
+var total_correctness=0
+var threshHoldToNextLevel=0
+var currentLevel=0
 var life_line=4
 var word_list= mutableListOf<Int>()
 var handler=Handler()
@@ -32,9 +35,26 @@ class GameActivity : AppCompatActivity() {
             alphaList.add(i.toString())
         }
 
+        tvLifeLine.text= life_line.toString()
+        tvScore.text= number_of_times_correct.toString()
+        tvLevel.text= currentLevel.toString()
 
         btnPlay.setOnClickListener {
+            //clear the buttons off the previous clicks and reset life line for next adventure if the life line is 0
             clearButtonText()
+            //reset number of times clicked
+            number_of_times_clicked=0
+            number_of_times_correct=0
+            if(life_line<=0){
+                life_line=4
+                number_of_times_correct=0
+                tvScore.text= number_of_times_correct.toString()
+                tvLifeLine.text= life_line.toString()
+            }
+
+
+            tvLevel.text= currentLevel.toString()
+
             newAlpha = alphaList.shuffled()
             var fourLetterWord = listOf<String>("FOUR", "CAKE", "FOAM", "FISH")
             var fiveLetterWord= listOf<String>("FREED","FRIED","CHOPS","PLAIN")
@@ -94,7 +114,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun btnCheckClicked(view: View) {
-        if (number_of_times_clicked >= word_list.size) {
+        if (number_of_times_clicked >= word_list.size || life_line<=0) {
             //now the user has clicked upto the length of random word choosen, tell the user to start the game afresh
             Toast.makeText(
                 this,
@@ -104,6 +124,7 @@ class GameActivity : AppCompatActivity() {
             word_list.clear()
             return
         }
+
         var btnClick = findViewById<Button>(view.id).hasOnClickListeners()
         when (view.id) {
 
@@ -112,9 +133,13 @@ class GameActivity : AppCompatActivity() {
                 if (btn_0.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
 
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
 
@@ -123,8 +148,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_1.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
 
@@ -133,8 +162,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_2.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_3 -> if (btnClick) {
@@ -142,8 +175,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_3.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_4 -> if (btnClick) {
@@ -151,8 +188,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_4.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
 
             }
@@ -161,8 +202,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_5.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_6 -> if (btnClick) {
@@ -170,8 +215,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_6.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_7 -> if (btnClick) {
@@ -179,8 +228,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_7.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
 
             }
@@ -189,8 +242,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_8.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_9 -> if (btnClick) {
@@ -198,8 +255,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_9.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_10 -> if (btnClick) {
@@ -207,8 +268,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_10.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_11 -> if (btnClick) {
@@ -216,8 +281,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_11.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_12 -> if (btnClick) {
@@ -225,8 +294,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_12.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_13 -> if (btnClick) {
@@ -234,8 +307,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_13.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_14 -> if (btnClick) {
@@ -243,8 +320,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_14.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_15 -> if (btnClick) {
@@ -252,8 +333,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_15.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_16 -> if (btnClick) {
@@ -261,8 +346,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_16.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_17 -> if (btnClick) {
@@ -270,8 +359,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_17.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_18 -> if (btnClick) {
@@ -279,8 +372,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_18.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_19 -> if (btnClick) {
@@ -288,8 +385,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_19.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_20 -> if (btnClick) {
@@ -297,8 +398,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_20.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
             R.id.btn_21 -> if (btnClick) {
@@ -306,8 +411,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_21.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
 
             }
@@ -316,8 +425,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_22.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
 
             }
@@ -326,8 +439,12 @@ class GameActivity : AppCompatActivity() {
                 if (btn_23.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
 
             }
@@ -336,16 +453,21 @@ class GameActivity : AppCompatActivity() {
                 if (btn_24.text == newAlpha[word_list[number_of_times_clicked]]) {
                     Toast.makeText(this, "You are right", Toast.LENGTH_SHORT).show()
                     number_of_times_correct+=1
+                    total_correctness+=1
+                    tvScore.text= total_correctness.toString()
                 } else {
                     Toast.makeText(this, "You are wrong", Toast.LENGTH_SHORT).show()
+                    life_line-=1
+                    tvLifeLine.text= life_line.toString()
                 }
             }
 
             else -> Toast.makeText(this, "Nothing much", Toast.LENGTH_SHORT).show()
         }
         number_of_times_clicked += 1
-
     }
+
+
 
     private fun clearButtonText() {
         for (i in 0..26) {

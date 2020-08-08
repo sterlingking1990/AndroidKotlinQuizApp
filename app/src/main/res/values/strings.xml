@@ -2,4 +2,7 @@
     <string name="app_name">AndroidKotlinQuizApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="life_line_label">Life-Line:</string>
+    <string name="score_label">Mem Score:</string>
+    <string name="current_level">Level:</string>
 </resources>
